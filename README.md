@@ -2,7 +2,7 @@
 
 HobbyHub is a full-stack web application aimed at connecting individuals through their shared interests and passions. This platform empowers users to discover, share, and engage with a vibrant community based on various hobbies.
 
-<p>
+<p align="center">
   <a href="https://ibb.co/ksR36SRT"><img src="https://i.ibb.co/jPcVZrcY/ss1.png" alt="ss1" border="0"></a>
   <a href="https://ibb.co/9mtsNHS8"><img src="https://i.ibb.co/mr86G5gD/ss2.png" alt="ss2" border="0"></a>
   <a href="https://ibb.co/Y7pZpBHL"><img src="https://i.ibb.co/99stsHQr/ss3.png" alt="ss3" border="0"></a>
@@ -39,7 +39,7 @@ This project relies on several key dependencies for both its frontend and backen
 * `axios`: A promise-based HTTP client for making API requests.
 * `react-icons` (or similar): For easy inclusion of popular icon libraries.
 * `tailwindcss` or `bootstrap` (or similar): For styling and responsive layout.
-* *(Add any other significant frontend libraries you used from your `package.json` here)*
+
 
 **Backend (Node.js/Express.js):**
 * `express`: Fast, unopinionated, minimalist web framework for Node.js.
@@ -48,7 +48,7 @@ This project relies on several key dependencies for both its frontend and backen
 * `dotenv`: Loads environment variables from a `.env` file into `process.env`.
 * `bcryptjs`: For hashing passwords securely.
 * `jsonwebtoken`: For implementing JSON Web Tokens for secure authentication.
-* *(Add any other significant backend libraries you used from your `package.json` here)*
+
 
 ## How to Run Locally
 
@@ -77,27 +77,22 @@ Before you begin, ensure you have the following installed:
     npm install
     # or yarn install
     ```
-4.  **Create a `.env` file in the `HobbyHub-Backend` directory** and add your environment variables.
-    ```
-    PORT=5000
-    MONGO_URI=your_mongodb_connection_string
-    JWT_SECRET=your_jwt_secret_key
-    ```
-    *Replace `your_mongodb_connection_string` with your actual MongoDB URI.*
-5.  **Start the backend server:**
+
+    
+4.  **Start the backend server:**
     ```bash
     npm start
-    # or node server.js (if your main file is named server.js)
+    # or node server.js 
     ```
-    The backend server should now be running on `http://localhost:5000` (or your specified port).
+    The backend server should now be running on `http://localhost:5000`.
 
 ### Frontend Setup
 
 1.  **Clone the frontend repository:**
     ```bash
-    git clone [https://github.com/Amirun-Nahar/HobbyHub-Frontend.git](https://github.com/Amirun-Nahar/HobbyHub-Frontend.git)
+    git clone [https://github.com/Amirun-Nahar/HobbyHub-Frontend.git]
     ```
-    *(If your frontend is in the same repository, navigate to its subfolder, e.g., `cd client`)*
+   
 2.  **Navigate into the frontend directory:**
     ```bash
     cd HobbyHub-Frontend
