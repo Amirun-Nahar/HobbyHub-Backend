@@ -164,7 +164,23 @@ const getAllGroups = async (req, res) => {
     const groups = await Group.find()
       .populate('creator', 'name photoURL')
       .populate('members', 'name photoURL');
-    res.status(200).json(groups);
+    // Ensure all required fields are present
+    const safeGroups = groups.map(group => ({
+      _id: group._id,
+      name: group.name,
+      description: group.description,
+      imageURL: group.imageURL,
+      location: group.location || null,
+      startDate: group.startDate || null,
+      members: Array.isArray(group.members) ? group.members : [],
+      maxMembers: group.maxMembers,
+      category: group.category,
+      creator: group.creator,
+      isActive: group.isActive,
+      createdAt: group.createdAt,
+      updatedAt: group.updatedAt
+    }))
+    res.status(200).json(safeGroups);
   } catch (error) {
     console.error('Get all groups error:', error);
     res.status(500).json({ message: 'Error fetching groups' });

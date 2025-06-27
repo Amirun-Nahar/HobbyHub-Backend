@@ -13,13 +13,16 @@ const {
 } = require('../controllers/groupController');
 const verifyToken = require('../middleware/verifyToken');
 
-router.get('/', getAllGroups);
-router.get('/user/created', verifyToken, getCreatedGroups);
-router.get('/user/joined', verifyToken, getJoinedGroups);
+// Protected routes (authentication required)
 router.get('/user/created', verifyToken, getCreatedGroups);
 router.get('/user/joined', verifyToken, getJoinedGroups);
 router.post('/', verifyToken, createGroup);
-router.get('/:id', getGroupById); 
+
+// Public routes
+router.get('/', getAllGroups);
+
+// Protected parameterized routes
+router.get('/:id', getGroupById);
 router.patch('/:id', verifyToken, updateGroup);
 router.delete('/:id', verifyToken, deleteGroup);
 router.post('/:id/join', verifyToken, joinGroup);
